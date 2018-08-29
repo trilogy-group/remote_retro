@@ -20,8 +20,21 @@ const IdeaBoard = props => {
   ))
 
   return (
-    <div className={`ui equal width padded grid ${styles.categoryColumnsWrapper}`}>
-      { categoryColumns }
+    <div>
+      <div className="ui three item tabular menu">
+        <div className="active item">
+          <img src={`/images/happy.svg`} height={40} width={40} />
+        </div>
+        <div className="item">
+          <img src={`/images/sad.svg`} height={40} width={40} />
+        </div>
+        <div className="item">
+          <img src={`/images/confused.svg`} height={40} width={40} />
+        </div>
+      </div>
+      <div className="ui bottom attached active tab segment">
+        {categoryColumns}
+      </div>
     </div>
   )
 }

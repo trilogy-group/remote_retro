@@ -115,7 +115,6 @@ export class IdeaSubmissionForm extends Component {
           </div>
         }
         <div className={`${styles.fields} fields`}>
-          <SelectDropdown {...dropdownProps} />
           <div className="eleven wide field">
             <div className="ui fluid action input">
               <label htmlFor="idea-body-input" className="visually-hidden">Idea input</label>

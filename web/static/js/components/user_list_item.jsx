@@ -14,8 +14,6 @@ export const UserListItem = ({ user, votes, stage }) => {
   const votesByUser = votes.filter(vote => vote.user_id === user.id).length
   const allVotesIn = votesByUser >= voteMax
 
-  if (user.is_facilitator && stage !== CLOSED) givenName += " (Facilitator)"
-
   return (
     <li className={`item ${styles.wrapper}`}>
       <img className={styles.picture} src={imgSrc} alt={givenName} />

@@ -50,13 +50,6 @@ export class CategoryColumn extends Component {
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
       >
-        <div className={`${styles.columnHead} ui center aligned basic segment`}>
-          <img src={`/images/${category}.svg`} height={iconHeight} width={iconHeight} alt={category} />
-          <div className="ui computer tablet only centered padded grid">
-            <p><strong>{category}</strong></p>
-          </div>
-        </div>
-        <div className={`ui fitted divider ${styles.divider}`} />
         { !!ideas.length && <IdeaList {...props} /> }
 
         <span className="overlay" />
