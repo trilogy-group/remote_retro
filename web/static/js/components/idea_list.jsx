@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import countBy from "lodash/countBy"
 import FlipMove from "react-flip-move"
 
-import ShadowedScrollContainer from "./shadowed_scroll_container"
 import Idea from "./idea"
 import * as AppPropTypes from "../prop_types"
 import styles from "./css_modules/idea_list.css"
@@ -55,20 +54,18 @@ class IdeaList extends Component {
     }
 
     return (
-      <ShadowedScrollContainer>
-        <FlipMove
-          duration={750}
-          staggerDelayBy={100}
-          disableAllAnimations={!state.sortByVotes}
-          easing="ease"
-          enterAnimation="none"
-          leaveAnimation="none"
-          className={`${category} ${styles.list} ideas`}
-          typeName="ul"
-        >
-          {sortedIdeas.map(idea => <Idea {...this.props} idea={idea} key={idea.id} />)}
-        </FlipMove>
-      </ShadowedScrollContainer>
+      <FlipMove
+        duration={750}
+        staggerDelayBy={100}
+        disableAllAnimations={!state.sortByVotes}
+        easing="ease"
+        enterAnimation="none"
+        leaveAnimation="none"
+        className={`${category} ${styles.list} ideas`}
+        typeName="ul"
+      >
+        {sortedIdeas.map(idea => <Idea {...this.props} idea={idea} key={idea.id} />)}
+      </FlipMove>
     )
   }
 }
