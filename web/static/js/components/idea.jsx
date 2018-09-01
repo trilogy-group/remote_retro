@@ -53,9 +53,12 @@ Idea.defaultProps = {
   assignee: {},
 }
 
-const mapStateToProps = (state, { idea }) => ({
-  assignee: selectors.getUserById(state, idea.assignee_id),
-  users: values(state.usersById),
-})
+const mapStateToProps = (state, { idea }) => {
+  return {
+    assignee: selectors.getUserById(state, idea.assignee_id),
+    currentUser: selectors.getCurrentUserPresence(state) || {},
+    users: values(state.usersById),
+  }
+}
 
 export default connect(mapStateToProps)(Idea)

@@ -42,9 +42,14 @@ class IdeaList extends Component {
     }
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    debugger
+    console.log("firing")
+  }
+
   render() {
     const { props, state } = this
-    const { category, ideas, votes } = props
+    const { category, ideas, votes, stage, retroChannel } = props
 
     let sortedIdeas
     if (state.sortByVotes) {
@@ -64,7 +69,9 @@ class IdeaList extends Component {
         className={`${category} ${styles.list} ideas`}
         typeName="ul"
       >
-        {sortedIdeas.map(idea => <Idea {...this.props} idea={idea} key={idea.id} />)}
+        {sortedIdeas.map(idea => (
+          <Idea stage={stage} retroChannel={retroChannel} idea={idea} key={idea.id} />
+        ))}
       </FlipMove>
     )
   }

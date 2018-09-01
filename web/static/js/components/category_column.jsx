@@ -40,7 +40,7 @@ export class CategoryColumn extends Component {
 
   render() {
     const { handleDragOver, handleDrop, handleDragLeave, props, state } = this
-    const { category, ideas } = props
+    const { category, ideas, stage, retroChannel, votes } = props
     const iconHeight = 45
 
     return (
@@ -57,7 +57,7 @@ export class CategoryColumn extends Component {
           </div>
         </div>
         <div className={`ui fitted divider ${styles.divider}`} />
-        { !!ideas.length && <IdeaList {...props} /> }
+        <IdeaList stage={stage} retroChannel={retroChannel} ideas={ideas} category={category} votes={votes} />
 
         <span className="overlay" />
       </section>
