@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+exec 2>&1
+
+exec chpst -U postgres:postgres pg_ctlcluster $PG_VERSION main start --foreground

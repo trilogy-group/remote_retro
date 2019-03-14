@@ -1,0 +1,25 @@
+version: '2.4'
+
+services:
+  rretro-dev:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: rretro-dev
+    ports: 
+      - "4000:4000"
+      - "5001:5001"
+      - "5432:5432"
+    entrypoint: /opt/devspaces/assets/entrypoint.sh
+    environment:
+      - DB_HOST=localhost
+      - DB_PORT=5432
+      - DB_NAME=remote_retro
+      - DB_USER=remote_retro
+      - DB_PASSWORD=remote_retro 
+      - RETRO_DB_HOST=localhost
+      - REMOTE_RETRO_GOOGLE_OAUTH_CLIENT_ID
+      - REMOTE_RETRO_GOOGLE_OAUTH_CLIENT_SECRET
+      - REMOTE_RETRO_GOOGLE_OAUTH_REDIRECT_URI
+    volumes:
+      - ../../:/data:Z

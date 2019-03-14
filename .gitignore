@@ -47,3 +47,7 @@ package-lock.json
 npm-debug.log*
 .eslintcache
 browser_logs.log
+
+
+# Devspaces
+/devspaces/docker/.tool-versions
