@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sname=postgres
+logdir="/var/log/service/$sname"
+mkdir -p "$logdir"
+exec svlogd "$logdir"
